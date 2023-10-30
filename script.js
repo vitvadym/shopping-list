@@ -3,6 +3,7 @@ import { createButton } from './heplers/createButton.js';
 const itemForm = document.getElementById('item-form');
 const itemInput = document.getElementById('item-input');
 const itemList = document.getElementById('item-list');
+const clearAllBtn = document.getElementById('clear');
 
 const addItem = (event) => {
   event.preventDefault();
@@ -23,4 +24,21 @@ const addItem = (event) => {
   itemInput.value = '';
 }
 
-itemForm.addEventListener('submit', addItem)
+const removeItem = (event) => {
+  console.log(event.target.parentElement);
+  const isContainClassRemove = event.target.parentElement.classList.contains('remove-item');
+
+  if (isContainClassRemove) {
+    const li = event.target.parentElement.parentElement;
+    li.remove();
+  }
+}
+
+const removeAllItems = () => {
+  const li = document.querySelectorAll('li');
+  li.forEach((item) => item.remove());
+}
+
+itemForm.addEventListener('submit', addItem);
+itemList.addEventListener('click', removeItem);
+clearAllBtn.addEventListener('click', removeAllItems)
