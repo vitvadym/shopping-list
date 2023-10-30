@@ -1,7 +1,8 @@
 import { createButton } from './heplers/createButton.js';
 import { removeItem } from './heplers/removeItem.js';
-import { removeAllItems } from './heplers/removeAllItems.js';;
+import { removeAllItems } from './heplers/removeAllItems.js';
 import { checkUI } from './heplers/checkUI.js';
+import { filterItems } from './heplers/filterItems.js';
 
 const itemForm = document.getElementById('item-form');
 const itemInput = document.getElementById('item-input');
@@ -29,22 +30,11 @@ const addItem = (event) => {
 
   checkUI();
   itemInput.value = '';
-}
-
-// export const checkUI = () => {
-//   const lists = document.querySelectorAll('li')
-//   if (!lists.length) {
-//     filterInput.classList.add('hide');
-//     clearAllBtn.classList.add('hide')
-//   } else {
-//     filterInput.classList.remove('hide');
-//     clearAllBtn.classList.remove('hide')
-//   }
-// }
+};
 
 itemForm.addEventListener('submit', addItem);
 itemList.addEventListener('click', removeItem);
 clearAllBtn.addEventListener('click', removeAllItems);
-// document.body.addEventListener('DOMContentLoaded', checkUI)
+filterInput.addEventListener('input' , filterItems);
 
 checkUI();
