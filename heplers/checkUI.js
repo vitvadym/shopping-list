@@ -1,4 +1,4 @@
-import { filterInput, clearAllBtn } from '../script.js';
+import { filterInput, clearAllBtn, submitBtn, itemInput } from '../script.js';
 
 export const checkUI = () => {
   const lists = document.querySelectorAll('li')

@@ -1,12 +1,9 @@
 import { checkUI } from './checkUI.js'; 
+import { removeItemFromLocalStorage } from './removeItemFromLocalStorage.js';
 
-export const removeItem = (event) => {
-  const isContainClassRemove = event.target.parentElement.classList.contains('remove-item');
+export const removeItem = (elem) => {
+  elem.remove()
 
-  if (isContainClassRemove) {
-    const li = event.target.parentElement.parentElement;
-    li.remove();
-
-    checkUI();
-  }
-}
+  removeItemFromLocalStorage(elem.textContent)
+  checkUI()
+};
