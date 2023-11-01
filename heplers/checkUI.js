@@ -1,7 +1,7 @@
-import { filterInput, clearAllBtn, submitBtn, itemInput } from '../script.js';
+import { filterInput, clearAllBtn } from '../script.js';
 
 export const checkUI = () => {
-  const lists = document.querySelectorAll('li')
+const lists = document.querySelectorAll('li')
 
   if (!lists.length) {
     filterInput.classList.add('hide');
@@ -10,4 +10,6 @@ export const checkUI = () => {
     filterInput.classList.remove('hide');
     clearAllBtn.classList.remove('hide')
   }
+
+  // localStorage.setItem('isEditing', JSON.stringify(false))
 }

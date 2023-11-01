@@ -1,6 +1,6 @@
 import { checkUI } from './checkUI.js';
 import { removeItem } from './removeItem.js';
-import { setItemToEdit } from './setItemToEdit.js';
+import { setItemToEdit } from '../script.js';
 
 export const onClickItem = (event) => {
   const elem = event.target.parentElement.parentElement;
